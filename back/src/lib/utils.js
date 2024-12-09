@@ -7,7 +7,7 @@ export const generateToken = (userId, res) => {
     });
 
     res.cookie("jwt", token, {
-        maxAge: 7 * 24 * 60 * 100, // MAXIMUM AGE IN MILLISECONDS
+        maxAge: 7 * 24 * 60 * 1000, // MAXIMUM AGE IN MILLISECONDS
         httpOnly: true, // prevent XSS attacks cross-site scripting attacks
         sameSite: "strict", // CSRF attacks cross-site request forgery attacks
         secure: process.env.NODE_ENV !== "development",                   // this will determine if it is https or http if it is http it will say not secure
