@@ -9,7 +9,7 @@ import { connectDB } from "./lib/db.js";
 import authRoutes from "./routes/auth.route.js";
 
 import messageRoutes from "./routes/message.route.js";
-
+import { app,server } from "./lib/socket.js";
 
 
 dotenv.config()
@@ -30,10 +30,13 @@ credentials: true,
    
 
 
+
 app.use("/api/auth", authRoutes);
 app.use("/api/messages/", messageRoutes);
 
-app.listen(5001, () => {
+
+// app.listen(5001,  we gonna replace app by server 
+server.listen(PORT, () => {
     console.log("server is running on PORT:" + PORT ); 
     connectDB()
 }); 
