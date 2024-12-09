@@ -13,8 +13,7 @@ import messageRoutes from "./routes/message.route.js";
 
 
 dotenv.config()
-const app = express();
-
+// const app = express(); i will delete this app because we have already created one in soket.js
 const PORT = process.env.PORT;
 
 
@@ -23,7 +22,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors ( {
 origin: "http://localhost:5173",
-methods: ['GET', 'POST'],
+// methods: ['GET', 'POST'],
 credentials: true, 
 
 })
