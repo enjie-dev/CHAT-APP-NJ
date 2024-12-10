@@ -4,6 +4,10 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 
 
+
+import path from "path";
+
+
 import { connectDB } from "./lib/db.js";
 
 import authRoutes from "./routes/auth.route.js";
@@ -15,6 +19,7 @@ import { app,server } from "./lib/socket.js";
 dotenv.config()
 // const app = express(); i will delete this app because we have already created one in soket.js
 const PORT = process.env.PORT;
+const__dirname = path.resolve();
 
 
 
@@ -33,6 +38,15 @@ credentials: true,
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages/", messageRoutes);
+
+if(process.env.NODE_ENV==="production"){
+    app.use(express.static(path.join(__dirname, "../front/dist")));
+
+
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "../front", "dist", "index.html"));
+    })
+}
 
 
 // app.listen(5001,  we gonna replace app by server 
