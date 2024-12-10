@@ -19,7 +19,7 @@ import { app,server } from "./lib/socket.js";
 dotenv.config()
 // const app = express(); i will delete this app because we have already created one in soket.js
 const PORT = process.env.PORT;
-const__dirname = path.resolve();
+const __dirname = path.resolve();
 
 
 
