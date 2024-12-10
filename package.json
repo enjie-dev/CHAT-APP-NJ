@@ -1,0 +1,20 @@
+{
+  "name": "chat-app-nj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enjie-dev/CHAT-APP-NJ.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enjie-dev/CHAT-APP-NJ/issues"
+  },
+  "homepage": "https://github.com/enjie-dev/CHAT-APP-NJ#readme"
+}
